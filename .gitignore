@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+
+# Webpack build files
+/dist/
+/*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE files (e.g., VSCode, JetBrains, etc.)
+.vscode/
+.idea/
+
+# npm package lock file (optional, but commonly ignored for consistency)
+package-lock.json
+
+# Sass cache
+.sass-cache/
+
+# .env or other environment files
+.env
+.env.local
+
+# Build output (if Webpack output is stored in 'dist' directory)
+dist/
+
+# Coverage directory (if using testing coverage tools)
+coverage/
+
+# Temporary files
+*.swp
+*.bak
+*.tmp
+
+# Operating system files
+# macOS
+.DS_Store
+# Windows
+Thumbs.db

@@ -1,0 +1,32 @@
+{
+    "name": "simple-webpack-setup",
+    "version": "1.0.0",
+    "description": "Minimal webpack setup with SCSS and JS bundling",
+    "scripts": {
+        "build": "cross-env NODE_ENV=production webpack --mode production",
+        "dev": "cross-env NODE_ENV=development webpack --mode development --watch"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.26.10",
+        "@babel/plugin-transform-runtime": "^7.26.9",
+        "@babel/preset-env": "^7.26.9",
+        "autoprefixer": "^10.4.0",
+        "babel-loader": "^10.0.0",
+        "clean-webpack-plugin": "^4.0.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.11.0",
+        "mini-css-extract-plugin": "^2.9.2",
+        "postcss": "^8.4.27",
+        "postcss-loader": "^7.3.3",
+        "sass": "^1.87.0",
+        "sass-loader": "^13.3.3",
+        "webpack": "^5.99.7",
+        "webpack-cli": "^5.1.4"
+    },
+    "browserslist": [
+        "defaults",
+        "last 2 versions",
+        "> 0.5%",
+        "not dead"
+    ]
+}
