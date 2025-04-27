@@ -12,6 +12,7 @@ require_once(TEMPLATE_DIR.'incl/taxonomy_genre.php');
 require_once(TEMPLATE_DIR.'incl/shortcode_most_recent_book_title.php');
 require_once(TEMPLATE_DIR.'incl/shortcode_books_by_genre.php');
 require_once(TEMPLATE_DIR.'incl/ajax_get_books.php');
+require_once(TEMPLATE_DIR.'incl/notify-me.php');
 
 add_action( 'wp_enqueue_scripts', 'twenty_twenty_child_style' );
 function twenty_twenty_child_style() {
