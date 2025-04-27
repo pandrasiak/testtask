@@ -11,6 +11,7 @@ require_once(TEMPLATE_DIR.'incl/cpt_books.php');
 require_once(TEMPLATE_DIR.'incl/taxonomy_genre.php');
 require_once(TEMPLATE_DIR.'incl/shortcode_most_recent_book_title.php');
 require_once(TEMPLATE_DIR.'incl/shortcode_books_by_genre.php');
+require_once(TEMPLATE_DIR.'incl/ajax_get_books.php');
 
 add_action( 'wp_enqueue_scripts', 'twenty_twenty_child_style' );
 function twenty_twenty_child_style() {
@@ -24,6 +25,8 @@ function twenty_twenty_child_style() {
 		filemtime( get_stylesheet_directory() . '/dist/main.js' ),
 		true 
 	);
+
+	wp_localize_script( 'child-custom-js', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
 }
 
 function custom_image_sizes() {
