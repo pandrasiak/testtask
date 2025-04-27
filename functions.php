@@ -23,4 +23,10 @@ function twenty_twenty_child_style() {
 		true 
 	);
 }
+
+function custom_image_sizes() {
+    add_image_size( 'book-image', 523, 523, true );
+}
+add_action( 'after_setup_theme', 'custom_image_sizes' );
+
  

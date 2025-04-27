@@ -1,0 +1,32 @@
+.c-single-book {
+
+    @extend .l-section;
+    
+    padding-bottom: 60px;
+
+    &__container {
+        @extend .l-container;
+    }
+
+    &__title {}
+
+    &__image {
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+        
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+    }
+
+    &__genre {}
+
+    &__date {}
+
+    &__content {}
+}

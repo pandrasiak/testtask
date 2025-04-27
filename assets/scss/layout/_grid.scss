@@ -1,0 +1,73 @@
+
+$grid-columns: 12;
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px
+);
+
+$gutter: 1rem; // Gutter (odstęp między kolumnami)
+
+.l-container {
+    max-width: 1024px;
+    padding: 0 $gutter;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.l-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter;
+  margin-left: -$gutter;   
+}
+
+
+// Mixin generujący klasy dla kolumn
+@mixin generate-col-classes($columns, $gutter: $gutter, $breakpoint: null) {
+  @if $breakpoint == null {
+    // Klasy domyślne (np. .col-1, .col-2, ..., .col-12)
+    @for $i from 1 through $columns {
+      .col-#{$i} {
+        width: calc(100% / #{$columns} * $i);
+        padding-left: $gutter;
+        padding-right: $gutter;
+      }
+    }
+  } @else {
+    // Klasy dla breakpointów (np. .col-md-5, .col-lg-4)
+    @for $i from 1 through $columns {
+      .col-#{$breakpoint}-#{$i} {
+        width: calc(100% / #{$columns} * $i);
+        padding-left: $gutter;
+        padding-right: $gutter;
+      }
+    }
+  }
+}
+
+// Generowanie klas dla breakpointów (najpierw klasy ogólne, potem breakpointowe)
+@include generate-col-classes($grid-columns, $gutter);
+
+// Generowanie klas dla breakpointów
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: $value) {
+    @include generate-col-classes($grid-columns, $gutter, $breakpoint);
+  }
+}
+
+
+@mixin breakpoint($size, $direction: 'up') {
+  $breakpoint: map-get($breakpoints, $size);
+
+  @if $direction == 'up' {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if $direction == 'down' {
+    @media (max-width: $breakpoint - 1) {
+      @content;
+    }
+  }
+}

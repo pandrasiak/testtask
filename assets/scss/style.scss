@@ -1,19 +1,26 @@
 // Abstracts
-@use "abstracts/variables";
-@use "abstracts/mixins";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/functions";
 
 // Base
-@use "base/reset";
-@use "base/typography";
-@use "base/global";
+@import "base/reset";
+@import "base/typography";
+@import "base/global";
 
 // Layout
-@use "layout/grid";
-@use "layout/header";
-@use "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/container";
+@import "layout/section";
+
 
 // Components
-@use "components/buttons";
-@use "components/forms";
+@import "components/buttons";
+@import "components/forms";
+@import "components/genre-list";
+@import "components/single-book";
+@import "components/pagination";
 
-// Pages
+// Pages 
