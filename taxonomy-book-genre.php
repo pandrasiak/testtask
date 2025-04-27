@@ -5,7 +5,7 @@ $term = get_queried_object();
 
 $args = array(
     'post_type' => 'book',
-    'posts_per_page' => 5,
+    'posts_per_page' => get_option('posts_per_page'),
     'tax_query' => array(
         array(
             'taxonomy' => 'book-genre',
